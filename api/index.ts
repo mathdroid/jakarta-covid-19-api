@@ -32,13 +32,21 @@ function coronaJakartaTableauParser(json, raw) {
       pulang: integer[29] - integer[2]
     },
     totalByRegion: {
-      jakartaBarat: integer[7],
       jakartaPusat: integer[3],
-      jakartaSelatan: integer[6],
-      jakartaTimur: integer[5],
       jakartaUtara: integer[4],
-      outsideJakarta: integer[3],
-      unknown: integer[8]
+      jakartaTimur: integer[5],
+      jakartaSelatan: integer[6],
+      jakartaBarat: integer[7],
+      unknown: integer[8],
+      outsideJakarta:
+        integer[28] +
+        integer[29] -
+        (integer[3] +
+          integer[4] +
+          integer[5] +
+          integer[6] +
+          integer[7] +
+          integer[8])
     },
     nasional: {
       positif: integer[32],
