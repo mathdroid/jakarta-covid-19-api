@@ -13,27 +13,41 @@ function parseTableauString(tableauString: string) {
 }
 
 function coronaJakartaTableauParser(json, raw) {
-  const array =
-    json.secondaryInfo.presModelMap.dataDictionary.presModelHolder
-      .genDataDictionaryPresModel.dataSegments["0"].dataColumns[0].dataValues;
+  const [
+    integer,
+    real,
+    label
+  ] = json.secondaryInfo.presModelMap.dataDictionary.presModelHolder.genDataDictionaryPresModel.dataSegments[
+    "0"
+  ].dataColumns.map(a => a.dataValues);
   const data = {
     odp: {
-      total: array[28],
-      proses: array[0],
-      selesai: array[1]
+      total: integer[28],
+      proses: integer[0],
+      selesai: integer[1]
     },
     pdp: {
-      total: array[29],
-      dirawat: array[2],
-      pulang: array[3]
+      total: integer[29],
+      dirawat: integer[2],
+      pulang: integer[3]
     },
     nasional: {
-      positif: array[32],
-      dirawat: array[34],
-      sembuh: array[18],
-      meninggal: array[33]
+      positif: integer[32],
+      dirawat: integer[34],
+      sembuh: integer[18],
+      meninggal: integer[33],
+      ratio: {
+        male: real[26],
+        female: real[27]
+      }
     },
-    raw: raw ? json : undefined
+    raw: raw
+      ? {
+          integer,
+          real,
+          label
+        }
+      : undefined
     // array
   };
 
@@ -91,10 +105,7 @@ export default async (request: NowRequest, response: NowResponse) => {
     response.json({ data });
   };
   try {
-    await getScrapedData(
-      resolver,
-      (request.query.raw as string) !== "undefined"
-    );
+    await getScrapedData(resolver, (request.query.raw as string) === "true");
   } catch (error) {
     response.status(500);
   }
