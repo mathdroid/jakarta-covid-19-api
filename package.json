@@ -6,7 +6,10 @@
   "license": "MIT",
   "dependencies": {
     "@zeit/fetch-retry": "^5.0.0",
-    "isomorphic-unfetch": "^3.0.0"
+    "chrome-aws-lambda": "^2.1.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "puppeteer": "^2.1.1",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@now/node": "^1.4.1"
