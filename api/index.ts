@@ -29,7 +29,16 @@ function coronaJakartaTableauParser(json, raw) {
     pdp: {
       total: integer[29],
       dirawat: integer[2],
-      pulang: integer[3]
+      pulang: integer[29] - integer[2]
+    },
+    totalByRegion: {
+      jakartaBarat: integer[7],
+      jakartaPusat: integer[3],
+      jakartaSelatan: integer[6],
+      jakartaTimur: integer[5],
+      jakartaUtara: integer[4],
+      outsideJakarta: integer[3],
+      unknown: integer[8]
     },
     nasional: {
       positif: integer[32],
@@ -39,6 +48,32 @@ function coronaJakartaTableauParser(json, raw) {
       ratio: {
         male: real[26],
         female: real[27]
+      },
+      details: {
+        male: {
+          unknown: integer[9],
+          lt5: integer[10],
+          6_19: integer[11],
+          20_29: integer[12],
+          30_39: integer[13],
+          40_49: integer[14],
+          50_59: integer[15],
+          60_69: integer[16],
+          70_79: integer[17],
+          gt80: integer[18]
+        },
+        female: {
+          unknown: integer[19],
+          lt5: integer[20],
+          6_19: integer[21],
+          20_29: integer[22],
+          30_39: integer[23],
+          40_49: integer[24],
+          50_59: integer[25],
+          60_69: integer[26],
+          70_79: integer[27],
+          gt80: integer[28]
+        }
       }
     },
     raw: raw
