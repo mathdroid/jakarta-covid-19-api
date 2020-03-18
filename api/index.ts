@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import { getOptions } from "../util/options";
-import { NowResponse } from "@now/node";
+import { NowResponse, NowRequest } from "@now/node";
 
 const URL = `https://public.tableau.com/views/DashboardCovid-19Jakarta_15837354399300/Dashboard22?%3Aembed=y&%3AshowVizHome=no&%3Adisplay_count=y&%3Adisplay_static_image=y&%3AbootstrapWhenNotified=true`;
 const isDev = process.env.NOW_REGION === "dev1";
@@ -12,7 +12,7 @@ function parseTableauString(tableauString: string) {
     .map(d => JSON.parse(`{${d}`));
 }
 
-function coronaJakartaTableauParser(json) {
+function coronaJakartaTableauParser(json, raw) {
   const array =
     json.secondaryInfo.presModelMap.dataDictionary.presModelHolder
       .genDataDictionaryPresModel.dataSegments["0"].dataColumns[0].dataValues;
@@ -32,15 +32,15 @@ function coronaJakartaTableauParser(json) {
       dirawat: array[34],
       sembuh: array[18],
       meninggal: array[33]
-    }
-    // raw: json,
+    },
+    raw: raw ? json : undefined
     // array
   };
 
   return data;
 }
 
-async function getScrapedData(resolver) {
+async function getScrapedData(resolver, raw) {
   const data = [];
   const browser = await puppeteer.launch(await getOptions(isDev));
   const page = await browser.newPage();
@@ -72,7 +72,7 @@ async function getScrapedData(resolver) {
       interceptedResponse
         .text()
         .then((txt: string) => {
-          resolver(coronaJakartaTableauParser(parseTableauString(txt)[1]));
+          resolver(coronaJakartaTableauParser(parseTableauString(txt)[1], raw));
         })
         .catch(err => {
           console.log(err);
@@ -86,12 +86,15 @@ async function getScrapedData(resolver) {
   return data;
 }
 
-export default async (_, response: NowResponse) => {
+export default async (request: NowRequest, response: NowResponse) => {
   const resolver = (data: any) => {
     response.json({ data });
   };
   try {
-    await getScrapedData(resolver);
+    await getScrapedData(
+      resolver,
+      (request.query.raw as string) !== "undefined"
+    );
   } catch (error) {
     response.status(500);
   }
