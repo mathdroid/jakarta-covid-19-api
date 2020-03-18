@@ -1,0 +1,14 @@
+{
+  "name": "jakarta-corona",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Muhammad Mustadi",
+  "license": "MIT",
+  "dependencies": {
+    "@zeit/fetch-retry": "^5.0.0",
+    "isomorphic-unfetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@now/node": "^1.4.1"
+  }
+}
