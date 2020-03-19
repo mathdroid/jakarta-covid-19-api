@@ -1,0 +1,398 @@
+{
+  "Pasien Meninggal karena Covid-19 (2)": {
+    "presModelHolder": {
+      "genVizDataPresModel": {
+        "vizColumns": [],
+        "paneColumnsData": {
+          "vizDataColumns": [
+            {
+              "fn": "[system:visual].[tuple_id]",
+              "fnDisagg": "",
+              "formatStrings": [],
+              "isAutoSelect": false,
+              "paneIndices": [0],
+              "columnIndices": [0]
+            },
+            {
+              "fn": "[federated.0vetv9d1uxima911zkh341gx0nb6].[sum:Meninggal:qk]",
+              "fnDisagg": "",
+              "localBaseColumnName": "[Meninggal]",
+              "baseColumnName": "[federated.0vetv9d1uxima911zkh341gx0nb6].[Meninggal]",
+              "fieldCaption": "SUM(Meninggal)",
+              "formatStrings": [
+                "",
+                "-1",
+                "t",
+                "",
+                "",
+                "",
+                "0",
+                ".",
+                ",",
+                "3;0"
+              ],
+              "datasourceCaption": "federated.0vetv9d1uxima911zkh341gx0nb6",
+              "dataType": "integer",
+              "aggregation": "sum",
+              "fieldRole": "measure",
+              "isAutoSelect": false,
+              "paneIndices": [0],
+              "columnIndices": [1]
+            }
+          ],
+          "paneColumnsList": [
+            {
+              "paneDescriptor": {
+                "paneDescrKey": "6344701b2a6cb0ec",
+                "xFields": [],
+                "yFields": [],
+                "xIndex": 0,
+                "yIndex": 0
+              },
+              "vizPaneColumns": [
+                {
+                  "tupleIds": [1],
+                  "valueIndices": [],
+                  "aliasIndices": [],
+                  "formatstrIndices": []
+                },
+                {
+                  "tupleIds": [],
+                  "valueIndices": [],
+                  "aliasIndices": [30],
+                  "formatstrIndices": [-1]
+                }
+              ]
+            }
+          ]
+        },
+        "highlightCaptions": [],
+        "filterFields": [],
+        "ubertipData": {
+          "ubertipPaneDatas": [
+            {
+              "htmlTooltip": "<span style=\"white-space:pre-wrap;tab-size:10;-moz-tab-size:10\"><table style=\"vertical-align:top;padding:0px\" cellspacing=\"0\"><tr><td style=\"white-space:pre\"><span style=\"font-family:'Tableau Book';font-size:13px;color:#787878;font-weight:normal;font-style:normal;text-decoration:none;\">Meninggal:</span></td><td>&nbsp;</td><td><span style=\"font-family:'Tableau Book';font-size:13px;color:#333333;font-weight:bold;font-style:normal;text-decoration:none;\">&lt;[federated.0vetv9d1uxima911zkh341gx0nb6].[sum:Meninggal:qk]&gt;</span></td></tr></table></span>",
+              "showButtons": true,
+              "summaryField": "SUM(Meninggal)",
+              "fieldVector": [],
+              "htmlTooltipModified": ""
+            }
+          ],
+          "standardCommands": {
+            "commandItems": [
+              {
+                "commandsType": "item",
+                "name": "Keep Only",
+                "telemetryId": "3684190817",
+                "iconRes": ":/en_US/TQRC_KEEP_ONLY",
+                "command": "tabdoc:keep-only-or-exclude dashboard=\"Dashboard 2 (2)\" exclude=\"false\" worksheet=\"Pasien Meninggal karena Covid-19 (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "Exclude",
+                "telemetryId": "1951450494",
+                "iconRes": ":/en_US/TQRC_EXCLUDE",
+                "command": "tabdoc:keep-only-or-exclude dashboard=\"Dashboard 2 (2)\" exclude=\"true\" worksheet=\"Pasien Meninggal karena Covid-19 (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "Group Members",
+                "iconRes": ":/en_US/TQRC_MERGE",
+                "command": "tabdoc:merge-or-split dashboard=\"Dashboard 2 (2)\" merge-or-split=\"merge\" worksheet=\"Pasien Meninggal karena Covid-19 (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "View Data...",
+                "iconRes": ":/en_US/TQRC_VIEWDATA",
+                "command": "tabdoc:view-selected-data selector={} visual-id-pres-model={\"worksheet\": \"Pasien Meninggal karena Covid-19 (2)\",\"dashboard\": \"Dashboard 2 (2)\"}"
+              }
+            ]
+          },
+          "multiselectCommands": {
+            "commandItems": [
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "View Data...",
+                "iconRes": ":/en_US/TQRC_VIEWDATA",
+                "command": "tabdoc:view-selected-data selector={} visual-id-pres-model={\"worksheet\": \"Pasien Meninggal karena Covid-19 (2)\",\"dashboard\": \"Dashboard 2 (2)\"}"
+              }
+            ]
+          },
+          "fn": ""
+        },
+        "reflineFields": [],
+        "refLineTips": []
+      }
+    }
+  },
+  "Pasien Positif Covid-19 (2)": {
+    "presModelHolder": {
+      "genVizDataPresModel": {
+        "vizColumns": [],
+        "paneColumnsData": {
+          "vizDataColumns": [
+            {
+              "fn": "[system:visual].[tuple_id]",
+              "fnDisagg": "",
+              "formatStrings": [],
+              "isAutoSelect": false,
+              "paneIndices": [0],
+              "columnIndices": [0]
+            },
+            {
+              "fn": "[federated.0vetv9d1uxima911zkh341gx0nb6].[sum:Kasus Positif:qk]",
+              "fnDisagg": "",
+              "localBaseColumnName": "[Kasus Positif]",
+              "baseColumnName": "[federated.0vetv9d1uxima911zkh341gx0nb6].[Kasus Positif]",
+              "fieldCaption": "SUM(Kasus Positif)",
+              "formatStrings": [
+                "",
+                "-1",
+                "t",
+                "",
+                "",
+                "",
+                "0",
+                ".",
+                ",",
+                "3;0"
+              ],
+              "datasourceCaption": "federated.0vetv9d1uxima911zkh341gx0nb6",
+              "dataType": "integer",
+              "aggregation": "sum",
+              "fieldRole": "measure",
+              "isAutoSelect": false,
+              "paneIndices": [0],
+              "columnIndices": [1]
+            }
+          ],
+          "paneColumnsList": [
+            {
+              "paneDescriptor": {
+                "paneDescrKey": "6344701b2a6cb0ec",
+                "xFields": [],
+                "yFields": [],
+                "xIndex": 0,
+                "yIndex": 0
+              },
+              "vizPaneColumns": [
+                {
+                  "tupleIds": [1],
+                  "valueIndices": [],
+                  "aliasIndices": [],
+                  "formatstrIndices": []
+                },
+                {
+                  "tupleIds": [],
+                  "valueIndices": [],
+                  "aliasIndices": [28],
+                  "formatstrIndices": [-1]
+                }
+              ]
+            }
+          ]
+        },
+        "highlightCaptions": [],
+        "filterFields": [],
+        "ubertipData": {
+          "ubertipPaneDatas": [
+            {
+              "htmlTooltip": "<span style=\"white-space:pre-wrap;tab-size:10;-moz-tab-size:10\"><table style=\"vertical-align:top;padding:0px\" cellspacing=\"0\"><tr><td style=\"white-space:pre\"><span style=\"font-family:'Tableau Book';font-size:13px;color:#787878;font-weight:normal;font-style:normal;text-decoration:none;\">Kasus Positif:</span></td><td>&nbsp;</td><td><span style=\"font-family:'Tableau Book';font-size:13px;color:#333333;font-weight:bold;font-style:normal;text-decoration:none;\">&lt;[federated.0vetv9d1uxima911zkh341gx0nb6].[sum:Kasus Positif:qk]&gt;</span></td></tr></table></span>",
+              "showButtons": true,
+              "summaryField": "SUM(Kasus Positif)",
+              "fieldVector": [],
+              "htmlTooltipModified": ""
+            }
+          ],
+          "standardCommands": {
+            "commandItems": [
+              {
+                "commandsType": "item",
+                "name": "Keep Only",
+                "telemetryId": "3684190817",
+                "iconRes": ":/en_US/TQRC_KEEP_ONLY",
+                "command": "tabdoc:keep-only-or-exclude dashboard=\"Dashboard 2 (2)\" exclude=\"false\" worksheet=\"Pasien Positif Covid-19 (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "Exclude",
+                "telemetryId": "1951450494",
+                "iconRes": ":/en_US/TQRC_EXCLUDE",
+                "command": "tabdoc:keep-only-or-exclude dashboard=\"Dashboard 2 (2)\" exclude=\"true\" worksheet=\"Pasien Positif Covid-19 (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "Group Members",
+                "iconRes": ":/en_US/TQRC_MERGE",
+                "command": "tabdoc:merge-or-split dashboard=\"Dashboard 2 (2)\" merge-or-split=\"merge\" worksheet=\"Pasien Positif Covid-19 (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "View Data...",
+                "iconRes": ":/en_US/TQRC_VIEWDATA",
+                "command": "tabdoc:view-selected-data selector={} visual-id-pres-model={\"worksheet\": \"Pasien Positif Covid-19 (2)\",\"dashboard\": \"Dashboard 2 (2)\"}"
+              }
+            ]
+          },
+          "multiselectCommands": {
+            "commandItems": [
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "View Data...",
+                "iconRes": ":/en_US/TQRC_VIEWDATA",
+                "command": "tabdoc:view-selected-data selector={} visual-id-pres-model={\"worksheet\": \"Pasien Positif Covid-19 (2)\",\"dashboard\": \"Dashboard 2 (2)\"}"
+              }
+            ]
+          },
+          "fn": ""
+        },
+        "reflineFields": [],
+        "refLineTips": []
+      }
+    }
+  },
+  "Proses Pemantauan (2)": {
+    "presModelHolder": {
+      "genVizDataPresModel": {
+        "vizColumns": [],
+        "paneColumnsData": {
+          "vizDataColumns": [
+            {
+              "fn": "[system:visual].[tuple_id]",
+              "fnDisagg": "",
+              "formatStrings": [],
+              "isAutoSelect": false,
+              "paneIndices": [0],
+              "columnIndices": [0]
+            },
+            {
+              "fn": "[federated.0vetv9d1uxima911zkh341gx0nb6].[sum:Proses Pemantauan:qk]",
+              "fnDisagg": "",
+              "localBaseColumnName": "[Proses Pemantauan]",
+              "baseColumnName": "[federated.0vetv9d1uxima911zkh341gx0nb6].[Proses Pemantauan]",
+              "fieldCaption": "SUM(Proses Pemantauan)",
+              "formatStrings": [
+                "",
+                "-1",
+                "t",
+                "",
+                "",
+                "",
+                "0",
+                ".",
+                ",",
+                "3;0"
+              ],
+              "datasourceCaption": "federated.0vetv9d1uxima911zkh341gx0nb6",
+              "dataType": "integer",
+              "aggregation": "sum",
+              "fieldRole": "measure",
+              "isAutoSelect": false,
+              "paneIndices": [0],
+              "columnIndices": [1]
+            }
+          ],
+          "paneColumnsList": [
+            {
+              "paneDescriptor": {
+                "paneDescrKey": "6344701b2a6cb0ec",
+                "xFields": [],
+                "yFields": [],
+                "xIndex": 0,
+                "yIndex": 0
+              },
+              "vizPaneColumns": [
+                {
+                  "tupleIds": [1],
+                  "valueIndices": [],
+                  "aliasIndices": [],
+                  "formatstrIndices": []
+                },
+                {
+                  "tupleIds": [],
+                  "valueIndices": [],
+                  "aliasIndices": [32],
+                  "formatstrIndices": [-1]
+                }
+              ]
+            }
+          ]
+        },
+        "highlightCaptions": [],
+        "filterFields": [],
+        "ubertipData": {
+          "ubertipPaneDatas": [
+            {
+              "htmlTooltip": "<span style=\"white-space:pre-wrap;tab-size:10;-moz-tab-size:10\"><table style=\"vertical-align:top;padding:0px\" cellspacing=\"0\"><tr><td style=\"white-space:pre\"><span style=\"font-family:'Tableau Book';font-size:13px;color:#787878;font-weight:normal;font-style:normal;text-decoration:none;\">Proses Pemantauan:</span></td><td>&nbsp;</td><td><span style=\"font-family:'Tableau Book';font-size:13px;color:#333333;font-weight:bold;font-style:normal;text-decoration:none;\">&lt;[federated.0vetv9d1uxima911zkh341gx0nb6].[sum:Proses Pemantauan:qk]&gt;</span></td></tr></table></span>",
+              "showButtons": true,
+              "summaryField": "SUM(Proses Pemantauan)",
+              "fieldVector": [],
+              "htmlTooltipModified": ""
+            }
+          ],
+          "standardCommands": {
+            "commandItems": [
+              {
+                "commandsType": "item",
+                "name": "Keep Only",
+                "telemetryId": "3684190817",
+                "iconRes": ":/en_US/TQRC_KEEP_ONLY",
+                "command": "tabdoc:keep-only-or-exclude dashboard=\"Dashboard 2 (2)\" exclude=\"false\" worksheet=\"Proses Pemantauan (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "Exclude",
+                "telemetryId": "1951450494",
+                "iconRes": ":/en_US/TQRC_EXCLUDE",
+                "command": "tabdoc:keep-only-or-exclude dashboard=\"Dashboard 2 (2)\" exclude=\"true\" worksheet=\"Proses Pemantauan (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "Group Members",
+                "iconRes": ":/en_US/TQRC_MERGE",
+                "command": "tabdoc:merge-or-split dashboard=\"Dashboard 2 (2)\" merge-or-split=\"merge\" worksheet=\"Proses Pemantauan (2)\""
+              },
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "View Data...",
+                "iconRes": ":/en_US/TQRC_VIEWDATA",
+                "command": "tabdoc:view-selected-data selector={} visual-id-pres-model={\"worksheet\": \"Proses Pemantauan (2)\",\"dashboard\": \"Dashboard 2 (2)\"}"
+              }
+            ]
+          },
+          "multiselectCommands": {
+            "commandItems": [
+              {
+                "commandsType": "item",
+                "name": "",
+                "telemetryId": "0",
+                "description": "View Data...",
+                "iconRes": ":/en_US/TQRC_VIEWDATA",
+                "command": "tabdoc:view-selected-data selector={} visual-id-pres-model={\"worksheet\": \"Proses Pemantauan (2)\",\"dashboard\": \"Dashboard 2 (2)\"}"
+              }
+            ]
+          },
+          "fn": ""
+        },
+        "reflineFields": [],
+        "refLineTips": []
+      }
+    }
+  }
+}

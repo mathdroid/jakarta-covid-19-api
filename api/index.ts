@@ -12,7 +12,7 @@ function parseTableauString(tableauString: string) {
     .map(d => JSON.parse(`{${d}`));
 }
 
-function coronaJakartaTableauParser(jsons, raw) {
+function coronaJakartaTableauParser(jsons, raw, verbose) {
   const [
     integer,
     real,
@@ -91,14 +91,14 @@ function coronaJakartaTableauParser(jsons, raw) {
           label
         }
       : undefined,
-    json1: raw ? jsons[0] : undefined,
-    json2: raw ? jsons[1] : undefined
+    json1: verbose ? jsons[0] : undefined,
+    json2: verbose ? jsons[1] : undefined
   };
 
   return data;
 }
 
-async function getScrapedData(resolver, raw) {
+async function getScrapedData(resolver, raw, verbose) {
   const data = [];
   const browser = await puppeteer.launch(await getOptions(isDev));
   const page = await browser.newPage();
@@ -130,7 +130,9 @@ async function getScrapedData(resolver, raw) {
       interceptedResponse
         .text()
         .then((txt: string) => {
-          resolver(coronaJakartaTableauParser(parseTableauString(txt), raw));
+          resolver(
+            coronaJakartaTableauParser(parseTableauString(txt), raw, verbose)
+          );
         })
         .catch(err => {
           console.log(err);
@@ -149,7 +151,11 @@ export default async (request: NowRequest, response: NowResponse) => {
     response.json({ data });
   };
   try {
-    await getScrapedData(resolver, (request.query.raw as string) === "true");
+    await getScrapedData(
+      resolver,
+      (request.query.raw as string) === "true",
+      (request.query.verbose as string) === "true"
+    );
   } catch (error) {
     response.status(500);
   }
