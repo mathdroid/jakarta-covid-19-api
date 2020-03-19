@@ -12,12 +12,12 @@ function parseTableauString(tableauString: string) {
     .map(d => JSON.parse(`{${d}`));
 }
 
-function coronaJakartaTableauParser(json, raw) {
+function coronaJakartaTableauParser(jsons, raw) {
   const [
     integer,
     real,
     label
-  ] = json.secondaryInfo.presModelMap.dataDictionary.presModelHolder.genDataDictionaryPresModel.dataSegments[
+  ] = jsons[1].secondaryInfo.presModelMap.dataDictionary.presModelHolder.genDataDictionaryPresModel.dataSegments[
     "0"
   ].dataColumns.map(a => a.dataValues);
   const data = {
@@ -90,8 +90,9 @@ function coronaJakartaTableauParser(json, raw) {
           real,
           label
         }
-      : undefined
-    // array
+      : undefined,
+    json1: raw ? jsons[0] : undefined,
+    json2: raw ? jsons[1] : undefined
   };
 
   return data;
@@ -129,7 +130,7 @@ async function getScrapedData(resolver, raw) {
       interceptedResponse
         .text()
         .then((txt: string) => {
-          resolver(coronaJakartaTableauParser(parseTableauString(txt)[1], raw));
+          resolver(coronaJakartaTableauParser(parseTableauString(txt), raw));
         })
         .catch(err => {
           console.log(err);
